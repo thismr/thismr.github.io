@@ -242,26 +242,34 @@
       //     window.location.href = "https://misterhere.ga";
       //   }
       // }
-
-      function url(url){
-      return url.match(/:\/\/(.[^/]+)/)[1];
-    }
-
-    function backClick()
-    {
-      var ref = document.referrer;
-      if(url(ref) =='misterhere.ga')
-      {
-          // do something
+      function backClick() {
+        if (document.referrer.indexOf('misterhere.ga') >= 0) {
           history.go(-1);
           return false;
+        } else {
+          window.location.href = "https://misterhere.ga";
+        }
       }
-      else
-      {
-         // redirect
-         window.location.href = 'https://misterhere.ga';
-      }
-   }
+
+  //     function url(url){
+  //     return url.match(/:\/\/(.[^/]+)/)[1];
+  //   }
+
+  //   function backClick()
+  //   {
+  //     var ref = document.referrer;
+  //     if(url(ref) =='misterhere.ga')
+  //     {
+  //         // do something
+  //         history.go(-1);
+  //         return false;
+  //     }
+  //     else
+  //     {
+  //        // redirect
+  //        window.location.href = 'https://misterhere.ga';
+  //     }
+  //  }
     </script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.js"></script>
